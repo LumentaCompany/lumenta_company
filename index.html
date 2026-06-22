@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>PARK DONG GEUN | LUMENTA COMPANY</title>
+  <meta name="description" content="PARK DONG GEUN, CEO & Founder of LUMENTA COMPANY. Building Intelligent Solutions." />
+  <meta name="theme-color" content="#050505" />
+  <meta property="og:title" content="PARK DONG GEUN | LUMENTA COMPANY" />
+  <meta property="og:description" content="Building Intelligent Solutions" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="LUMENTA COMPANY" />
+
+  <style>
+    :root {
+      --black: #050505;
+      --black-2: #090909;
+      --black-3: #111111;
+      --line: rgba(255,255,255,.09);
+      --line-strong: rgba(255,255,255,.18);
+      --text: #f5f5f5;
+      --muted: #8e8e8e;
+      --muted-2: #bdbdbd;
+      --silver-a: #ffffff;
+      --silver-b: #e9e9e9;
+      --silver-c: #a8a8a8;
+      --silver-d: #717171;
+      --silver-e: #f7f7f7;
+      --glow: rgba(255,255,255,.12);
+      --max: 520px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--black);
+    }
+
+    body {
+      min-height: 100svh;
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 50% -8%, rgba(255,255,255,.15), rgba(255,255,255,.035) 24%, transparent 48%),
+        radial-gradient(circle at 0% 30%, rgba(255,255,255,.04), transparent 28%),
+        radial-gradient(circle at 100% 70%, rgba(255,255,255,.035), transparent 30%),
+        linear-gradient(180deg, #0a0a0a 0%, #030303 56%, #000 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .34;
+      background-image:
+        linear-gradient(rgba(255,255,255,.026) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.026) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(circle at 50% 20%, black, transparent 72%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at 50% 15%, transparent 0 18%, rgba(0,0,0,.12) 42%, rgba(0,0,0,.55) 100%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      padding: max(34px, env(safe-area-inset-top)) 20px max(40px, env(safe-area-inset-bottom));
+      position: relative;
+      z-index: 2;
+    }
+
+    .shell {
+      min-height: calc(100svh - 72px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 34px;
+    }
+
+    .hero {
+      text-align: center;
+      padding-top: 8px;
+    }
+
+    .logo-stage {
+      width: 190px;
+      height: 156px;
+      margin: 0 auto 26px;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .logo-stage::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,.18), rgba(255,255,255,.045) 31%, transparent 68%);
+      filter: blur(12px);
+      opacity: .72;
+      animation: breathe 5.8s ease-in-out infinite;
+    }
+
+    .logo-stage::after {
+      content: "";
+      position: absolute;
+      inset: 22px 8px;
+      border-radius: 34px;
+      background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.012));
+      border: 1px solid rgba(255,255,255,.075);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.12),
+        0 20px 70px rgba(0,0,0,.55);
+      opacity: .9;
+    }
+
+    .lumenta-logo {
+      width: 154px;
+      height: auto;
+      position: relative;
+      z-index: 2;
+      overflow: visible;
+      filter:
+        drop-shadow(0 2px 0 rgba(255,255,255,.08))
+        drop-shadow(0 18px 34px rgba(0,0,0,.65))
+        drop-shadow(0 0 28px rgba(255,255,255,.12));
+      animation: logoIn .9s cubic-bezier(.2,.8,.2,1) both;
+    }
+
+    .logo-fill {
+      fill: url(#lumentaSilver);
+    }
+
+    .logo-line {
+      fill: none;
+      stroke: url(#lumentaSilver);
+      stroke-width: 1.05;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .brand-name {
+      font-size: clamp(48px, 12vw, 76px);
+      line-height: .92;
+      letter-spacing: -3.8px;
+      font-weight: 850;
+      background: linear-gradient(180deg, #fff 0%, #f2f2f2 16%, #b9b9b9 42%, #6f6f6f 55%, #ffffff 75%, #8a8a8a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 24px 50px rgba(255,255,255,.06);
+      animation: rise .8s cubic-bezier(.2,.8,.2,1) .08s both;
+    }
+
+    .brand-company {
+      margin-top: 12px;
+      letter-spacing: 10px;
+      font-size: 12px;
+      color: rgba(255,255,255,.52);
+      animation: rise .8s cubic-bezier(.2,.8,.2,1) .14s both;
+    }
+
+    .brand-tagline {
+      margin: 28px auto 0;
+      width: fit-content;
+      padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 999px;
+      background: rgba(255,255,255,.035);
+      color: rgba(255,255,255,.72);
+      font-size: 12px;
+      letter-spacing: .8px;
+      backdrop-filter: blur(16px);
+      animation: rise .8s cubic-bezier(.2,.8,.2,1) .2s both;
+    }
+
+    .identity {
+      text-align: center;
+      padding: 10px 0 0;
+      animation: rise .8s cubic-bezier(.2,.8,.2,1) .26s both;
+    }
+
+    .hairline {
+      width: 168px;
+      height: 1px;
+      margin: 0 auto 32px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.42), transparent);
+    }
+
+    .identity h1 {
+      font-size: clamp(28px, 7vw, 40px);
+      font-weight: 800;
+      letter-spacing: -1.6px;
+      line-height: 1;
+    }
+
+    .identity .ko {
+      margin-top: 12px;
+      font-size: 18px;
+      color: rgba(255,255,255,.72);
+      letter-spacing: -.2px;
+    }
+
+    .identity .role {
+      margin-top: 12px;
+      font-size: 14px;
+      color: rgba(255,255,255,.48);
+      letter-spacing: .3px;
+    }
+
+    .actions {
+      display: grid;
+      gap: 12px;
+      animation: rise .8s cubic-bezier(.2,.8,.2,1) .32s both;
+    }
+
+    .action {
+      display: grid;
+      grid-template-columns: 38px 1fr auto;
+      align-items: center;
+      gap: 14px;
+      min-height: 78px;
+      padding: 16px 18px;
+      text-decoration: none;
+      border-radius: 22px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.023)),
+        linear-gradient(90deg, rgba(255,255,255,.03), transparent 45%);
+      border: 1px solid var(--line);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        0 16px 38px rgba(0,0,0,.32);
+      backdrop-filter: blur(20px);
+      transition: transform .22s ease, border-color .22s ease, background .22s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .action::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,.07), transparent);
+      transform: translateX(-115%);
+      transition: transform .75s ease;
+    }
+
+    .action:hover {
+      transform: translateY(-3px);
+      border-color: var(--line-strong);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.085), rgba(255,255,255,.028)),
+        linear-gradient(90deg, rgba(255,255,255,.05), transparent 45%);
+    }
+
+    .action:hover::before {
+      transform: translateX(115%);
+    }
+
+    .action-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .action-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: url(#iconSilver);
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .action-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.1px;
+      color: rgba(255,255,255,.45);
+      margin-bottom: 5px;
+    }
+
+    .action-value {
+      font-size: 15px;
+      font-weight: 650;
+      letter-spacing: -.2px;
+      color: rgba(255,255,255,.9);
+    }
+
+    .action-arrow {
+      color: rgba(255,255,255,.42);
+      font-size: 18px;
+      transform: translateY(-1px);
+    }
+
+    .statement {
+      padding: 30px 24px;
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,.075);
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,.07), transparent 42%),
+        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.016));
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.075),
+        0 20px 48px rgba(0,0,0,.34);
+      text-align: center;
+      animation: rise .8s cubic-bezier(.2,.8,.2,1) .38s both;
+    }
+
+    .statement .eyebrow {
+      font-size: 11px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.42);
+      margin-bottom: 12px;
+    }
+
+    .statement h2 {
+      font-size: 22px;
+      letter-spacing: -.6px;
+      margin-bottom: 12px;
+      background: linear-gradient(180deg, #fff, #b5b5b5 58%, #f3f3f3);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .statement p {
+      font-size: 14px;
+      line-height: 1.85;
+      color: rgba(255,255,255,.58);
+      word-break: keep-all;
+    }
+
+    .footer {
+      text-align: center;
+      padding-bottom: 8px;
+      color: rgba(255,255,255,.36);
+      animation: rise .8s cubic-bezier(.2,.8,.2,1) .44s both;
+    }
+
+    .footer .company-small {
+      font-size: 12px;
+      letter-spacing: 4px;
+      color: rgba(255,255,255,.56);
+      margin-bottom: 12px;
+    }
+
+    .footer p {
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes logoIn {
+      from { opacity: 0; transform: scale(.94) translateY(8px); filter: blur(5px); }
+      to { opacity: 1; transform: scale(1) translateY(0); filter:
+        drop-shadow(0 2px 0 rgba(255,255,255,.08))
+        drop-shadow(0 18px 34px rgba(0,0,0,.65))
+        drop-shadow(0 0 28px rgba(255,255,255,.12)); }
+    }
+
+    @keyframes breathe {
+      0%,100% { transform: scale(.96); opacity: .55; }
+      50% { transform: scale(1.05); opacity: .82; }
+    }
+
+    @media (max-width: 420px) {
+      .page {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .shell {
+        gap: 28px;
+      }
+
+      .logo-stage {
+        width: 168px;
+        height: 136px;
+        margin-bottom: 22px;
+      }
+
+      .lumenta-logo {
+        width: 138px;
+      }
+
+      .brand-company {
+        letter-spacing: 8px;
+      }
+
+      .action {
+        grid-template-columns: 36px 1fr auto;
+        padding: 15px 16px;
+        min-height: 74px;
+      }
+
+      .action-value {
+        font-size: 14px;
+      }
+
+      .statement {
+        padding: 26px 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- SVG definitions shared by logo and icons -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <linearGradient id="lumentaSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="18%" stop-color="#e9e9e9"/>
+        <stop offset="42%" stop-color="#8f8f8f"/>
+        <stop offset="62%" stop-color="#f8f8f8"/>
+        <stop offset="82%" stop-color="#bdbdbd"/>
+        <stop offset="100%" stop-color="#6f6f6f"/>
+      </linearGradient>
+      <linearGradient id="iconSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="52%" stop-color="#a8a8a8"/>
+        <stop offset="100%" stop-color="#f5f5f5"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <main class="page">
+    <div class="shell">
+
+      <section class="hero" aria-label="LUMENTA brand">
+        <div class="logo-stage">
+          <svg class="lumenta-logo" viewBox="245 378 105 88" role="img" aria-label="LUMENTA COMPANY logo">
+            <defs>
+              <linearGradient id="lumentaSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="18%" stop-color="#e9e9e9"/>
+                <stop offset="42%" stop-color="#8f8f8f"/>
+                <stop offset="62%" stop-color="#f8f8f8"/>
+                <stop offset="82%" stop-color="#bdbdbd"/>
+                <stop offset="100%" stop-color="#6f6f6f"/>
+              </linearGradient>
+            </defs>
+            <path class="logo-fill" fill-rule="nonzero" d="M 302.5 411.996094 C 305.34375 413.246094 309.101562 416.730469 310.609375 419.601562 L 308.382812 419.535156 L 300.777344 419.40625 L 284.316406 419.429688 L 271.742188 419.480469 L 271.746094 390.355469 C 272.359375 391.046875 272.894531 391.695312 273.625 392.214844 L 284.082031 399.605469 C 284.332031 400.25 284.125 400.863281 284.121094 401.511719 L 284.101562 410.863281 L 297.421875 410.945312 C 299.191406 410.957031 300.90625 411.296875 302.5 411.996094 "/>
+<path class="logo-fill" fill-rule="nonzero" d="M 313.035156 417.707031 C 312.472656 415.921875 312.0625 414.289062 311.683594 412.519531 L 309.347656 401.613281 L 308.410156 397.542969 L 302.226562 405.597656 C 301.683594 406.304688 301.019531 406.867188 300.363281 407.441406 C 299.289062 408.277344 297.972656 408.753906 296.609375 408.503906 L 296.539062 399.898438 L 305.113281 390.339844 C 306.359375 388.953125 307.542969 387.652344 308.941406 386.464844 C 309.84375 385.699219 311.023438 385.347656 312.175781 385.730469 C 312.699219 385.902344 313.148438 386.636719 313.300781 387.183594 C 313.902344 389.367188 314.402344 391.394531 314.886719 393.628906 L 319.246094 413.863281 C 319.535156 415.210938 319.917969 416.496094 320.558594 417.652344 C 321.175781 418.761719 322.332031 419.1875 323.351562 420.203125 C 321.3125 420.3125 319.371094 420.335938 317.402344 420.210938 C 315.121094 420.066406 313.726562 419.894531 313.035156 417.707031 "/>
+<path class="logo-fill" fill-rule="nonzero" d="M 296.269531 397.4375 L 291.613281 402.226562 C 291.09375 402.761719 290.816406 403.355469 290.445312 404.15625 C 289.125 403.195312 287.769531 402.128906 286.871094 400.660156 C 285.84375 398.976562 285.953125 396.59375 287.257812 395.136719 L 288.445312 393.820312 L 296.59375 385.675781 C 297.964844 384.308594 299.625 383.53125 301.535156 383.347656 C 303.75 383.136719 306.839844 383.46875 309.167969 384.417969 C 307.789062 385.265625 306.695312 386.039062 305.652344 387.175781 L 299.707031 393.6875 L 297.785156 395.777344 Z M 296.269531 397.4375 "/>
+<path class="logo-fill" fill-rule="nonzero" d="M 284.527344 394.527344 L 277.707031 389.816406 C 276.613281 389.0625 275.695312 387.984375 275.25 386.738281 C 274.621094 384.992188 273.453125 384.355469 271.539062 383.667969 L 281.597656 383.605469 C 283.042969 383.757812 284.488281 384.832031 284.496094 386.398438 Z M 284.527344 394.527344 "/>
+<path class="logo-fill" fill-rule="nonzero" d="M 250.300781 442.054688 L 250.300781 429.789062 L 252.875 429.789062 L 252.875 439.777344 L 258.605469 439.777344 L 258.605469 442.054688 Z M 250.300781 442.054688 "/>
+<path class="logo-fill" fill-rule="nonzero" d="M 267.332031 442.316406 C 265.707031 442.316406 264.445312 441.867188 263.546875 440.960938 C 262.648438 440.054688 262.199219 438.785156 262.199219 437.148438 L 262.199219 429.789062 L 264.773438 429.789062 L 264.773438 437.414062 C 264.773438 438.253906 264.992188 438.902344 265.429688 439.355469 C 265.867188 439.8125 266.503906 440.039062 267.332031 440.039062 C 268.148438 440.039062 268.773438 439.816406 269.199219 439.367188 C 269.625 438.917969 269.839844 438.265625 269.839844 437.414062 L 269.839844 429.789062 L 272.414062 429.789062 L 272.414062 437.148438 C 272.414062 438.785156 271.96875 440.054688 271.074219 440.960938 C 270.179688 441.867188 268.933594 442.316406 267.332031 442.316406 "/>
+<path class="logo-fill" fill-rule="nonzero" d="M 277.199219 442.054688 L 277.199219 429.789062 L 280.054688 429.789062 L 283.574219 437.289062 L 287.082031 429.789062 L 289.867188 429.789062 L 289.867188 442.054688 L 287.464844 442.054688 L 287.464844 433.664062 L 284.554688 439.707031 L 282.507812 439.707031 L 279.597656 433.679688 L 279.597656 442.054688 Z M 277.199219 442.054688 "/>
+<path class="logo-fill" fill-rule="nonzero" d="M 294.703125 442.054688 L 294.703125 429.789062 L 303.042969 429.789062 L 303.042969 431.980469 L 297.246094 431.980469 L 297.246094 434.730469 L 302.695312 434.730469 L 302.695312 436.921875 L 297.246094 436.921875 L 297.246094 439.867188 L 303.359375 439.867188 L 303.359375 442.054688 Z M 294.703125 442.054688 "/>
+<path class="logo-fill" fill-rule="nonzero" d="M 307.460938 442.054688 L 307.460938 429.789062 L 310.175781 429.789062 L 315.273438 438.410156 L 315.273438 429.789062 L 317.726562 429.789062 L 317.726562 442.054688 L 315.011719 442.054688 L 309.914062 433.46875 L 309.914062 442.054688 Z M 307.460938 442.054688 "/>
+<path class="logo-fill" fill-rule="nonzero" d="M 325.40625 442.054688 L 325.40625 432.066406 L 321.550781 432.066406 L 321.550781 429.789062 L 331.835938 429.789062 L 331.835938 432.066406 L 327.980469 432.066406 L 327.980469 442.054688 Z M 325.40625 442.054688 "/>
+<path class="logo-fill" fill-rule="nonzero" d="M 337.722656 437.183594 L 341.105469 437.183594 L 339.421875 432.417969 Z M 333.253906 442.054688 L 338.144531 429.789062 L 340.789062 429.789062 L 345.679688 442.054688 L 342.839844 442.054688 L 341.859375 439.304688 L 336.988281 439.304688 L 336.003906 442.054688 Z M 333.253906 442.054688 "/>
+<path class="logo-fill" fill-rule="nonzero" d="M 253.082031 459.179688 C 252.101562 459.179688 251.34375 458.894531 250.804688 458.320312 C 250.269531 457.75 250 456.9375 250 455.886719 C 250 455.210938 250.125 454.628906 250.378906 454.140625 C 250.628906 453.652344 250.988281 453.277344 251.457031 453.011719 C 251.925781 452.75 252.480469 452.617188 253.128906 452.617188 C 253.925781 452.617188 254.585938 452.820312 255.105469 453.226562 L 254.730469 454.054688 C 254.460938 453.875 254.210938 453.75 253.980469 453.671875 C 253.746094 453.597656 253.480469 453.558594 253.183594 453.558594 C 251.804688 453.558594 251.113281 454.335938 251.113281 455.886719 C 251.113281 457.453125 251.792969 458.234375 253.148438 458.234375 C 253.464844 458.234375 253.75 458.195312 254 458.117188 C 254.253906 458.039062 254.523438 457.90625 254.820312 457.714844 L 255.195312 458.550781 C 254.910156 458.761719 254.59375 458.917969 254.242188 459.023438 C 253.894531 459.125 253.511719 459.179688 253.082031 459.179688 "/>
+<path class="logo-fill" fill-rule="nonzero" d="M 267.414062 458.234375 C 268.015625 458.234375 268.480469 458.035156 268.804688 457.632812 C 269.128906 457.230469 269.292969 456.65625 269.292969 455.90625 C 269.292969 455.144531 269.128906 454.566406 268.804688 454.164062 C 268.480469 453.761719 268.015625 453.558594 267.414062 453.558594 C 266.808594 453.558594 266.339844 453.761719 266.015625 454.164062 C 265.6875 454.566406 265.523438 455.144531 265.523438 455.90625 C 265.523438 456.65625 265.6875 457.230469 266.015625 457.632812 C 266.339844 458.035156 266.808594 458.234375 267.414062 458.234375 M 267.414062 459.179688 C 266.800781 459.179688 266.269531 459.046875 265.820312 458.777344 C 265.371094 458.511719 265.023438 458.132812 264.777344 457.640625 C 264.53125 457.152344 264.410156 456.574219 264.410156 455.90625 C 264.410156 455.234375 264.53125 454.65625 264.777344 454.164062 C 265.023438 453.671875 265.371094 453.292969 265.820312 453.023438 C 266.269531 452.753906 266.800781 452.617188 267.414062 452.617188 C 268.023438 452.617188 268.554688 452.753906 269.003906 453.023438 C 269.453125 453.292969 269.800781 453.671875 270.042969 454.164062 C 270.285156 454.65625 270.40625 455.234375 270.40625 455.90625 C 270.40625 456.574219 270.285156 457.152344 270.042969 457.640625 C 269.800781 458.132812 269.453125 458.511719 269.003906 458.777344 C 268.554688 459.046875 268.023438 459.179688 267.414062 459.179688 "/>
+<path class="logo-fill" fill-rule="nonzero" d="M 280.097656 459.042969 L 280.097656 452.75 L 281.308594 452.75 L 283.285156 456.859375 L 285.253906 452.75 L 286.441406 452.75 L 286.441406 459.042969 L 285.4375 459.042969 L 285.4375 454.363281 L 283.71875 457.839844 L 282.820312 457.839844 L 281.101562 454.378906 L 281.101562 459.042969 Z M 280.097656 459.042969 "/>
+<path class="logo-fill" fill-rule="nonzero" d="M 297.460938 455.941406 L 298.453125 455.941406 C 298.929688 455.941406 299.28125 455.847656 299.507812 455.660156 C 299.730469 455.472656 299.84375 455.179688 299.84375 454.785156 C 299.84375 454.394531 299.730469 454.105469 299.507812 453.917969 C 299.28125 453.726562 298.933594 453.632812 298.460938 453.632812 L 297.460938 453.632812 Z M 296.417969 459.042969 L 296.417969 452.753906 L 298.542969 452.753906 C 299.320312 452.753906 299.914062 452.925781 300.320312 453.273438 C 300.730469 453.621094 300.933594 454.125 300.933594 454.785156 C 300.933594 455.441406 300.726562 455.945312 300.316406 456.296875 C 299.90625 456.648438 299.3125 456.824219 298.53125 456.824219 L 297.460938 456.824219 L 297.460938 459.042969 Z M 296.417969 459.042969 "/>
+<path class="logo-fill" fill-rule="nonzero" d="M 311.476562 456.589844 L 313.492188 456.589844 L 312.484375 453.882812 Z M 309.410156 459.042969 L 311.945312 452.75 L 313.050781 452.75 L 315.585938 459.042969 L 314.398438 459.042969 L 313.824219 457.488281 L 311.136719 457.488281 L 310.558594 459.042969 Z M 309.410156 459.042969 "/>
+<path class="logo-fill" fill-rule="nonzero" d="M 324.960938 459.042969 L 324.960938 452.75 L 326.101562 452.75 L 329.042969 457.542969 L 329.042969 452.75 L 330.066406 452.75 L 330.066406 459.042969 L 328.925781 459.042969 L 325.984375 454.28125 L 325.984375 459.042969 Z M 324.960938 459.042969 "/>
+<path class="logo-fill" fill-rule="nonzero" d="M 341.789062 459.042969 L 341.789062 456.726562 L 339.460938 452.75 L 340.683594 452.75 L 342.335938 455.816406 L 344 452.75 L 345.1875 452.75 L 342.859375 456.726562 L 342.859375 459.042969 Z M 341.789062 459.042969 "/>
+<path class="logo-line" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" d="M -0.000757399 0.00126174 L 95.302514 0.00126174 " transform="matrix(0.998785, 0, 0, -0.998785, 249.852319, 447.231729)"/>
+          </svg>
+        </div>
+
+        <div class="brand-name">LUMENTA</div>
+        <div class="brand-company">COMPANY</div>
+        <div class="brand-tagline">BLACK · SILVER · LUXURY TECH</div>
+      </section>
+
+      <section class="identity" aria-label="Profile">
+        <div class="hairline"></div>
+        <h1>PARK DONG GEUN</h1>
+        <div class="ko">박동근</div>
+        <div class="role">CEO &amp; Founder</div>
+      </section>
+
+      <section class="actions" aria-label="Contact links">
+        <a class="action" href="tel:+821089230392" aria-label="Call Park Dong Geun">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.5 3 3.7 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.5c0 .7-.5 1.2-1.2 1.2C10.3 21.4 2.6 13.7 2.6 3.4c0-.7.5-1.2 1.2-1.2h3.5c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.7.6 4 .1.4 0 .8-.3 1.2l-2.2 2.2z"/></svg>
+          </div>
+          <div>
+            <div class="action-label">Direct Contact</div>
+            <div class="action-value">+82 10 8923 0392</div>
+          </div>
+          <div class="action-arrow">→</div>
+        </a>
+
+        <a class="action" href="mailto:ceo@lumenta.co.kr" aria-label="Send email to LUMENTA">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24"><path d="M3.5 6.5h17v11h-17z"/><path d="M4 7l8 6 8-6"/></svg>
+          </div>
+          <div>
+            <div class="action-label">Business Email</div>
+            <div class="action-value">ceo@lumenta.co.kr</div>
+          </div>
+          <div class="action-arrow">→</div>
+        </a>
+
+        <a class="action" href="https://lumenta.co.kr" target="_blank" rel="noopener" aria-label="Visit LUMENTA website">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/><path d="M3.5 12h17"/><path d="M12 3c2.4 2.4 3.5 5.4 3.5 9S14.4 18.6 12 21c-2.4-2.4-3.5-5.4-3.5-9S9.6 5.4 12 3z"/></svg>
+          </div>
+          <div>
+            <div class="action-label">Official Website</div>
+            <div class="action-value">lumenta.co.kr</div>
+          </div>
+          <div class="action-arrow">→</div>
+        </a>
+      </section>
+
+      <section class="statement" aria-label="Brand statement">
+        <div class="eyebrow">LUMENTA COMPANY</div>
+        <h2>Building Intelligent Solutions</h2>
+        <p>
+          LUMENTA delivers technology-driven solutions for modern businesses seeking innovation, scalability and sustainable growth.
+        </p>
+      </section>
+
+      <footer class="footer">
+        <div class="company-small">LUMENTA</div>
+        <p>
+          Seoul, Republic of Korea<br>
+          © 2026 LUMENTA COMPANY
+        </p>
+      </footer>
+
+    </div>
+  </main>
+</body>
+</html>
